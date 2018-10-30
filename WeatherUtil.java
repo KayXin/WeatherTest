@@ -137,7 +137,7 @@ public class WeatherUtil {
     }
     
     
-    public void getWeatherData(String location){
+    public static void getWeatherData(String location){
     	String url = "https://free-api.heweather.com/s6/weather?location="+location+"&key=e13d97893ef041e58fc1735509a61961";
     	Map<String,Object> mapTypes = JSON.parseObject(sendGet(url));  
     	JSONArray json = JSONArray.fromObject(mapTypes.get("HeWeather6"));//userStr是json字符串
@@ -154,5 +154,7 @@ public class WeatherUtil {
 //    	map.put("arr", "长沙");
 //    	WeatherUtil a = new WeatherUtil();
 //    	System.out.println(a.getWeatherData(map));
+    	
+    	getWeatherData("天津");
 	}
 }
